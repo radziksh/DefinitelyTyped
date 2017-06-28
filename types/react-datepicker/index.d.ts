@@ -1,25 +1,27 @@
-// Type definitions for react-datepicker 0.46
+// Type definitions for react-datepicker 0.48.0
 // Project: https://github.com/Hacker0x01/react-datepicker
 // Definitions by: Rajab Shakirov <https://github.com/radziksh>,
-//     Andrey Balokha <https://github.com/andrewBalekha>,
-//     Greg Smith <https://github.com/smrq>
+//                 Andrey Balokha <https://github.com/andrewBalekha>,
+//                 Greg Smith <https://github.com/smrq>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
 import * as React from "react";
 import * as moment from "moment";
 
-export interface ReactDatePickerProps {
+export interface Props {
+	allowSameDay?: boolean;
 	autoComplete?: string;
 	autoFocus?: boolean;
 	calendarClassName?: string;
+	children?: React.ReactNode;
 	className?: string;
 	customInput?: React.ReactNode;
 	dateFormat?: string | string[];
 	dateFormatCalendar?: string;
 	disabled?: boolean;
 	disabledKeyboardNavigation?: boolean;
-	dropdownMode?: string;
+	dropdownMode?: 'scroll' | 'select';
 	endDate?: moment.Moment;
 	excludeDates?: any[];
 	filterDate?(): any;
@@ -66,5 +68,7 @@ export interface ReactDatePickerProps {
 	value?: string;
 	withPortal?: boolean;
 }
-declare const ReactDatePicker: React.ClassicComponentClass<ReactDatePickerProps>;
-export default ReactDatePicker;
+
+export default class DatePicker extends React.Component<Props, {}> { }
+
+export as namespace DatePicker;
